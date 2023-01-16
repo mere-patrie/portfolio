@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --bodyBgColor : #292929;
+    --padding : .75rem;
+    --borderRadius : 3.4rem;
+    --breakpoint : 1200px;
+    --iconSize: 1.3rem;
+    /* Colors */
+    --textWhite : #FFFFFF;
+    --textBlack : #000000;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bodyBgColor);
+    min-height: 100vh !important;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Containers */
+
+.containerFluid {
+    width: 100% !important;
+    padding: var(--padding);
+}
+.containerFluidCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Landing page */
+
+.landingPageContainer {
+    min-height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+}
+.landingPageContainer > div:nth-child(1) {
+    padding: 0;
+    height: calc(40vh - (var(--padding) * 1.5));
+    gap: var(--padding);
+    position: relative;
+}
+#landingPageLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Landig page button grid */
+
+.buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    height: calc(60vh - (var(--padding) * 1.5));
+    gap: var(--padding) var(--padding);
+    transition: 1s;
+}
+.buttonGridButton {
+    border-radius: var(--borderRadius);
+    padding: calc(3 * var(--padding));
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+    justify-content: flex-end;
+    font-weight: 625;
+    transition: 0.4s ease;
+}
+.buttonGridButton:hover {
+    cursor: pointer;
+    transform: scale(.95);
+}
+.buttonGridButton:hover > .buttonFooter {
+    opacity: 0;
+}
+.buttonGridButton > .buttonFooter {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding);
+    justify-content: space-between;
+    font-size: 18px;
+    transition: 0.15s ease;
+}
+.buttonFooterIcon {
+    width: var(--iconSize);
+    height: var(--iconSize);
+}
+.buttonGridButton:nth-child(1) {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color: #2900e8;
+    color: var(--textWhite);
+}
+.buttonGridButton:nth-child(2) {
+    grid-area: 2 / 3 / 3 / 5;
+    background-color: #FFF480;
+    color: var(--textBlack);
+}
+.buttonGridButton:nth-child(3) {
+    grid-area: 1 / 3 / 2 / 4;
+    background-color: #FFFFFF;
+    color: var(--textBlack);
+}
+.buttonGridButton:nth-child(4) {
+    grid-area: 1 / 4 / 2 / 5;
+    background-color: #1B1B1F;
+    color: var(--textWhite);
+}
+
+/* On breakpoint */
+@media (max-width: 1200px) {
+    .buttonGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .buttonGridButton:nth-child(1) {
+        grid-area: 1 / 1 / 3 / 3;
+        background-color: #2900e8;
+    }
+    .buttonGridButton:nth-child(2) {
+        grid-area: 3 / 1 / 4 / 2;
+        background-color: #FFF480;
+    }
+    .buttonGridButton:nth-child(3) {
+        grid-area: 3 / 2 / 4 / 3;
+        background-color: #FFFFFF;
+    }
+    .buttonGridButton:nth-child(4) {
+        grid-area: 4 / 1 / 5 / 3;
+        background-color: #1B1B1F;
+    }
+}
+
+
+/* Code */
+
+.angusFunction {font-size: 24px;}
+.codeLine {margin: 0;}
+.codeTab {margin-left: 40px;}
+.textYellow{color:#dcdcaa}
+.textDarkYellow{color: #ffd700;}
+.textBlue{color:#569cd6;}
+.textLightBlue{color:#4fc1ff;}
+.textPurple{color: #da70d6;}
+.textBrown{color: #ce9178;}
+.textGreen{color: #b5cea8;}

@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/portfolio/public/main.css">
+    <script src="http://localhost/portfolio/public/js/main.js" defer></script>
+    <title>Angus's portfolio</title>
 </head>
 <body>
+
+    <!-- Landing page screen -->
+    <div class="containerFluid landingPageContainer">
+        <div class="containerFluid">
+            <h1 id="landingPageLogo">Angus</h1>
+        </div>
+        <!-- Langing page buttons -->
+        <div class="buttonGrid">
+            <div class="buttonGridButton">
+                <div class="buttonFooter">
+                    <p>My services</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="buttonFooterIcon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/></svg>
+                </div>
+            </div>
+            <div class="buttonGridButton">
+                <div class="buttonFooter">
+                    <p>Contact me</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="buttonFooterIcon" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+                </div>
+            </div>
+            <div class="buttonGridButton">
+                <div class="buttonFooter">
+                    <p>Work</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="buttonFooterIcon" viewBox="0 0 16 16"><path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/><path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12z"/></svg>
+                </div>
+            </div>
+            <div class="buttonGridButton">
+                <div class="buttonFooter">
+                    <p>About me</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="buttonFooterIcon" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="code angusFunction">
+        <p class="codeLine"><span class="textBlue">function</span> <span class="textYellow">Angus</span><span class="textDarkYellow">()</span> <span class="textDarkYellow">{</span></p>
+        <p class="codeLine codeTab"><span class="textBlue">const</span> <span class="textLightBlue">first_name</span> = <span class="textBrown">"Angus"</span>;</p>
+        <p class="codeLine codeTab"><span class="textBlue">const</span> <span class="textLightBlue">last_name</span> = <span class="textBrown">"Paillaugue"</span>;</p>
+        <p class="codeLine codeTab"><span class="textBlue">const</span> <span class="textLightBlue">age</span> = <span class="textGreen" id="myAge"></span>;</p>
+        <p class="codeLine"><span class="textDarkYellow">}</span></p>
+    </div>
     
 </body>
 </html>
