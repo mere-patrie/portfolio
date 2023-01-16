@@ -2,6 +2,7 @@
 :root {
     --bodyBgColor : #292929;
     --padding : .75rem;
+    --bigPadding : calc(3 * var(--padding));
     --borderRadius : 3.4rem;
     --breakpoint : 1200px;
     --iconSize: 1.3rem;
@@ -36,6 +37,9 @@ p {
     width: 100% !important;
     padding: var(--padding);
 }
+.containerFluid.h-100 {
+    min-height: 100vh;
+}
 .containerFluidCenter {
     display: flex;
     justify-content: center;
@@ -65,7 +69,7 @@ p {
 }
 
 
-/* Landig page button grid */
+/* Landig page screen */
 
 .buttonGrid {
     display: grid;
@@ -77,8 +81,9 @@ p {
     transition: 1s;
 }
 .buttonGridButton {
+    position: relative;
     border-radius: var(--borderRadius);
-    padding: calc(3 * var(--padding));
+    padding: var(--bigPadding);
     display: flex;
     flex-direction: column;
     gap: var(--padding);
@@ -91,7 +96,25 @@ p {
     transform: scale(.95);
 }
 .buttonGridButton:hover > .buttonFooter {
+    transform: translate(0, 90%);
+    opacity: .4;
+}
+.buttonHoverCard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     opacity: 0;
+    transition: .2s ease;
+}
+.buttonGridButton:hover > .buttonHoverCard {
+    opacity: 1;
 }
 .buttonGridButton > .buttonFooter {
     display: flex;
@@ -106,22 +129,22 @@ p {
     height: var(--iconSize);
 }
 .buttonGridButton:nth-child(1) {
-    grid-area: 1 / 1 / 3 / 3;
+    grid-area: 1 / 1 / 3 / 3; 
     background-color: #2900e8;
     color: var(--textWhite);
 }
 .buttonGridButton:nth-child(2) {
-    grid-area: 2 / 3 / 3 / 5;
+    grid-area: 1 / 3 / 2 / 4; 
     background-color: #FFF480;
     color: var(--textBlack);
 }
 .buttonGridButton:nth-child(3) {
-    grid-area: 1 / 3 / 2 / 4;
+    grid-area: 1 / 4 / 2 / 5;
     background-color: #FFFFFF;
     color: var(--textBlack);
 }
 .buttonGridButton:nth-child(4) {
-    grid-area: 1 / 4 / 2 / 5;
+    grid-area: 2 / 3 / 3 / 5;
     background-color: #1B1B1F;
     color: var(--textWhite);
 }
@@ -150,6 +173,36 @@ p {
         background-color: #1B1B1F;
     }
 }
+
+
+
+/* Work */
+
+.workCardContainer {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding);
+    width: 100%;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+}
+.workCard {
+    background-color: #1B1B1F;
+    border-radius: var(--borderRadius);
+    padding: var(--bigPadding);
+    white-space: nowrap;
+    width: fit-content;
+}
+/* On breakpoint */
+@media (max-width: 900px) {
+    .workCardContainer {
+        flex-direction: column;
+    }
+    .workCard {
+        width: 100%;
+    }
+}
+
 
 
 /* Code */

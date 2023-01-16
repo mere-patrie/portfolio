@@ -8,15 +8,23 @@ function myAge(){
 }
 
 function logoScrollEffect (){
-    $("#landingPageLogo")
+    $("#landingPageLogo");
 }
 
 function main() {
     myAge();
 }
 
+function landingPageButtonsScroll() {
+    $("[data-scroll]").click((e) => {
+        var element = $("#"+$($(e.target)[0]).attr("data-scroll"));
+        element[0].scrollIntoView({ behavior: 'smooth' })
+    });
+}
+
 $("document").ready(function() {
     main();
+    landingPageButtonsScroll();
     $("body").scroll((e) => {
         console.log("scroll");
     })
