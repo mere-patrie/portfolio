@@ -50,24 +50,44 @@
     </div>
 
     <div class="containerFluid h-100" id="work">
+    </div>
+    
+    <div class="containerFluid h-100" id="about">
         <div class="workCardContainer">
             <div class="workCard">
-                <div class="code angusFunction">
-                    <p class="codeLine"><span class="textBlue">function</span> <span class="textYellow">Angus</span><span class="textDarkYellow">()</span> <span class="textDarkYellow">{</span></p>
+                <!-- <div class="code angusFunction">
+                    <p class="codeLine"><span class="textBlue">function</span> <span class="textYellow">Angus</span> <span class="textDarkYellow">()</span> <span class="textDarkYellow">{</span></p>
                     <p class="codeLine codeTab"><span class="textBlue">const</span> <span class="textLightBlue">first_name</span> = <span class="textBrown">"Angus"</span>;</p>
                     <p class="codeLine codeTab"><span class="textBlue">const</span> <span class="textLightBlue">last_name</span> = <span class="textBrown">"Paillaugue"</span>;</p>
                     <p class="codeLine codeTab"><span class="textBlue">const</span> <span class="textLightBlue">age</span> = <span class="textGreen" id="myAge"></span>;</p>
                     <p class="codeLine"><span class="textDarkYellow">}</span></p>
+                </div> -->
+                <div class="code angusFunction">
+                    <p class="codeLine"><span class="textBlue"> class</span> <span class="textDarkGreen">Human</span> <span class="textDarkYellow">{</span></p>
+                    <p class="codeLine codeTab"><span class="textBlue">constructor</span> <span class="textPurple">() {</span></p>
+                    <p class="codeLine codeTab-2"><span class="textBlue">this</span>.<span class="textLightBlue">first_name</span> = <span class="textBrown">"Angus"</span>;</p>
+                    <p class="codeLine codeTab-2"><span class="textBlue">this</span>.<span class="textLightBlue">last_name</span> = <span class="textBrown">"Paillaugue"</span>;</p>
+                    <p class="codeLine codeTab-2"><span class="textBlue">this</span>.<span class="textLightBlue">age</span> = <span class="textGreen">17</span>;</p>
+                    <p class="codeLine codeTab"><span class="textPurple">}</span></p>
+                    <p class="codeLine"><span class="textDarkYellow">}</span></p>
+                    </p>
                 </div>
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nisi illo assumenda maiores ad nesciunt eveniet laudantium vero ratione delectus ea atque ipsa, dicta dolorem velit blanditiis, quam molestiae. Earum!</p>
         </div>
     </div>
-
-    <div class="containerFluid h-100" id="work"></div>
-    <div class="containerFluid h-100" id="about"></div>
     <div class="containerFluid h-100" id="services"></div>
-    <div class="containerFluid h-100" id="contact"></div>
+
+    <div class="containerFluid h-100" id="contact">
+        <div class="workCard"></div>
+        <div class="contactForm">
+            <input type="text" class="contactInput" placeholder="E-mail">
+            <input type="text" class="contactInput"placeholder="Name">
+            <input type="text" class="contactInput" placeholder="Sujet">
+            <textarea class="contactInput" placeholder="Message"></textarea>
+            <button class="contactInput"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg></button>
+        </div>
+    </div>
 
 
     

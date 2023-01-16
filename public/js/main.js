@@ -17,8 +17,7 @@ function main() {
 
 function landingPageButtonsScroll() {
     $("[data-scroll]").click((e) => {
-        var element = $("#"+$($(e.target)[0]).attr("data-scroll"));
-        element[0].scrollIntoView({ behavior: 'smooth' })
+        $("#"+$(e.target)[0].closest(".buttonGridButton").getAttribute("data-scroll"))[0].scrollIntoView({ behavior: 'smooth' })
     });
 }
 
@@ -27,5 +26,5 @@ $("document").ready(function() {
     landingPageButtonsScroll();
     $("body").scroll((e) => {
         console.log("scroll");
-    })
+    });
 })
