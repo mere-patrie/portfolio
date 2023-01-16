@@ -24,7 +24,8 @@ function landingPageButtonsScroll() {
 $("document").ready(function() {
     main();
     landingPageButtonsScroll();
-    $("body").scroll((e) => {
-        console.log("scroll");
-    });
-})
+});
+
+// $(window).scroll(function(e) {
+//     $("#landingPageLogo").css("bottom", (window.pageYOffset)+$("#landingPageLogo").parent().innerHeight()*0.3);
+// });

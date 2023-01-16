@@ -24,6 +24,13 @@ body {
     color: #FFFFFF;
 }
 
+.pageContainer {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -36,6 +43,7 @@ p {
 .containerFluid {
     width: 100% !important;
     padding: var(--padding);
+    scroll-snap-align: start;
 }
 .containerFluid.h-100 {
     min-height: 100vh;
@@ -63,7 +71,7 @@ p {
 }
 #landingPageLogo {
     position: absolute;
-    top: 50%;
+    bottom: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -121,7 +129,7 @@ p {
     flex-direction: row;
     gap: var(--padding);
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 24px;
     transition: 0.15s ease;
 }
 .buttonFooterIcon {
