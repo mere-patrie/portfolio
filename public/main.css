@@ -43,23 +43,34 @@ body {
     /* scroll-snap-type: y mandatory; */
 }
 
-p {
+p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
 
-button {
+.button {
     cursor: pointer;
     border-radius: var(--borderRadius);
     padding: var(--bigPadding);
     background-color: var(--bgYellow);
     font-size: 3vmin;
+    color: var(--textBlack);
+    text-decoration: none;
     outline: none;
     transition: .4s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-button:hover {
+.button:hover {
     transform: scale(0.95);
+}
+@media (max-width: 600px) {
+    .button {
+        font-size: 6vmin;
+    }
 }
 
 
@@ -101,10 +112,6 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
-/* Landig page screen */
-
 .buttonGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -182,7 +189,6 @@ button:hover {
     background-color: #1B1B1F;
     color: var(--textWhite);
 }
-
 /* On breakpoint */
 @media (max-width: 1200px) {
     .buttonGrid {
@@ -217,7 +223,50 @@ button:hover {
 
 /* Work */
 
-.workCardContainer {
+#work {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+}
+.workCard {
+    width: 100%;
+    padding: var(--bigPadding);
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+}
+.workCardContent {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding);
+}
+.workCardContent > .workImgContainer {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    width: 40%;
+    aspect-ratio: 1/1;
+    border-radius: calc(var(--padding) * 1.5);
+}
+.workCard:nth-child(1) {background-color: #A5A1FF; color: var(--textBlack);}
+.workCard:nth-child(2) {background-color: #CBE5FF; color: var(--textBlack);}
+.workCard:nth-child(3) {background-color: #011D32; color: var(--textWhite);}
+.workCard:nth-child(4) {background-color: #4EC9B0; color: var(--textBlack);}
+.workCardContent > .workImgContainer:nth-child(1) {
+    background-image: url("http://localhost/portfolio/public/sources/ui.jpg");
+}
+
+
+
+/* About */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+}
+.aboutCardContainer {
     display: flex;
     flex-direction: row;
     gap: var(--padding);
@@ -228,57 +277,48 @@ button:hover {
     background-color: #0f0f0f;
     border-radius: calc(var(--borderRadius) / 1.5);
 }
-.workCardContainer:nth-child(even){
+.aboutCardContainer:nth-child(even){
     flex-direction: row-reverse;
 }
-.workCard {
+.aboutCard {
     background-color: #1B1B1F;
     border-radius: var(--borderRadius);
     padding: var(--bigPadding);
     white-space: nowrap;
     width: fit-content;
 }
-/* On breakpoint */
-@media (max-width: 550px) {
-    .workCardContainer {
-        flex-direction: column;
-    }
-    .workCardContainer:nth-child(even):not(:nth-child(1)){
-        flex-direction: column;
-    }
-    .workCard {
-        width: 100%;
-        white-space: wrap;
-    }
-}
-@media (max-width: 850px) {
-    .workCardContainer:nth-child(1){
-        flex-direction: column;
-    }
-}
-
-
-/* About */
-
-#about {
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding);
-}
-.workCardContainer > .pdp {
+.aboutCardContainer > .pdp {
     cursor: pointer;
     transition: .4s ease;
     border-radius: 50%;
     width: auto;
     aspect-ratio: 1/1;
-    filter: blur(1.2px) brightness(0.4) grayscale(1);
+    filter: blur(1px) grayscale(1);
 }
-.workCardContainer > .pdp:hover {
-    filter: blur(0px) brightness(1) grayscale(0);
+.aboutCardContainer > .pdp:hover {
+    filter: blur(0px) grayscale(0);
+}
+/* On breakpoint */
+@media (max-width: 550px) {
+    .aboutCardContainer {
+        flex-direction: column;
+    }
+    .aboutCardContainer:nth-child(even):not(:nth-child(1)){
+        flex-direction: column;
+    }
+    .aboutCard {
+        width: 100%;
+        white-space: wrap;
+    }
+}
+@media (max-width: 850px) {
+    .aboutCardContainer:nth-child(1){
+        flex-direction: column;
+    }
 }
 @media (max-width: 550px) {
-    .workCardContainer > .pdp {
-        filter: blur(0px) brightness(1) grayscale(0);
+    .aboutCardContainer > .pdp {
+        filter: blur(0px) grayscale(0);
     }
 }
 
@@ -337,6 +377,7 @@ button:hover {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     width: 100%;
+    min-height: 100%;
 }
 .contactForm > .contactInput:not(button):focus {
     outline: none;
@@ -355,11 +396,12 @@ button:hover {
     grid-area: 2 / 1 / 4 / 5; 
 }
 .contactForm > .contactInput:nth-child(5) {
-    grid-area: 2 / 6 / 4 / 7; 
+    grid-area: 3 / 5 / 4 / 7;
     background-color: #FFF480;
-    padding: 30%;
+    padding: var(--bigPadding);
     cursor: pointer;
     transition: all .4s;
+    height: 100%;
 }
 .contactForm > .contactInput:nth-child(5):hover {
     transform: scale(.98);
@@ -369,11 +411,33 @@ button:hover {
     width: 100%;
     height: 100%;
 }
+#formError {
+    grid-area: 2 / 5 / 3 / 7;
+    background-color: #F8D7DA;
+    border: 1px solid #B02A37;
+    color: #B02A37;
+    border-radius: var(--borderRadius);
+    position: relative;
+    font-size: 4vmin;
+    display: none;
+}
+#formError > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 /* On breakpoint */
 @media (max-width: 900px) {
     .contactForm {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     .contactForm > .contactInput:nth-child(1) {
         grid-area: 1 / 1 / 2 / 2; 
@@ -388,12 +452,15 @@ button:hover {
         grid-area: 3 / 1 / 6 / 3; 
     }
     .contactForm > .contactInput:nth-child(5) {
-        grid-area: 6 / 1 / 7 / 3; 
+        grid-area: 7 / 1 / 8 / 3; 
         padding: calc(1.5 * var(--padding));
     }
     .contactForm > .contactInput:nth-child(5) >svg {
         width: 5vmin;
         height: 5vmin;
+    }
+    #formError {
+        grid-area: 6 / 1 / 7 / 3;
     }
 }
 /* On breakpoint */
