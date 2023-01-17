@@ -7,25 +7,25 @@ function myAge(){
     $("#myAge").text(myAge);
 }
 
-function logoScrollEffect (){
-    $("#landingPageLogo");
-}
-
-function main() {
-    myAge();
-}
-
 function landingPageButtonsScroll() {
     $("[data-scroll]").click((e) => {
         $("#"+$(e.target)[0].closest(".buttonGridButton").getAttribute("data-scroll"))[0].scrollIntoView({ behavior: 'smooth' })
     });
 }
 
+function main() {
+    myAge();
+}
+
+
 $("document").ready(function() {
     main();
     landingPageButtonsScroll();
 });
 
-// $(window).scroll(function(e) {
-//     $("#landingPageLogo").css("bottom", (window.pageYOffset)+$("#landingPageLogo").parent().innerHeight()*0.3);
-// });
+$("#pageContainer").scroll(function() {
+    var opacity = ($("#landingPageLogo").parent().offset().top+$("#landingPageLogo").parent().innerHeight()/2)/($("#landingPageLogo").parent().height()/2);
+    opacity = opacity >= 1 ? 1 : opacity;
+    opacity = opacity <= 0 ? 0 : opacity;
+    $("#landingPageLogo").css("opacity", opacity);
+});

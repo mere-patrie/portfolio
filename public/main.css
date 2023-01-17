@@ -9,6 +9,16 @@
     /* Colors */
     --textWhite : #FFFFFF;
     --textBlack : #000000;
+    --bgGreen : #D0FF94;
+    --bgDarkGreen : #021F23;
+    --bgPurple : #290038;
+}
+
+/* On breakpoint */
+@media (max-width: 1200px) {
+    :root {
+        --bigPadding : calc(2 * var(--padding));
+    }
 }
 
 *{
@@ -24,11 +34,11 @@ body {
     color: #FFFFFF;
 }
 
-.pageContainer {
+#pageContainer {
     height: 100vh;
     width: 100vw;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
 }
 
 p {
@@ -43,7 +53,7 @@ p {
 .containerFluid {
     width: 100% !important;
     padding: var(--padding);
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 .containerFluid.h-100 {
     min-height: 100vh;
@@ -117,7 +127,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 3vmin;
     opacity: 0;
     transition: .2s ease;
 }
@@ -138,8 +148,8 @@ p {
 }
 .buttonGridButton:nth-child(1) {
     grid-area: 1 / 1 / 3 / 3; 
-    background-color: #2900e8;
-    color: var(--textWhite);
+    background-color: var(--bgDarkGreen);
+    color: #78F3E2;
 }
 .buttonGridButton:nth-child(2) {
     grid-area: 1 / 3 / 2 / 4; 
@@ -148,8 +158,8 @@ p {
 }
 .buttonGridButton:nth-child(3) {
     grid-area: 1 / 4 / 2 / 5;
-    background-color: #FFFFFF;
-    color: var(--textBlack);
+    background-color: var(--bgPurple);
+    color: #FCD6FF;
 }
 .buttonGridButton:nth-child(4) {
     grid-area: 2 / 3 / 3 / 5;
@@ -164,21 +174,26 @@ p {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
     }
+    .buttonGridButton {
+        padding: calc(2*var(--bigPadding)) var(--bigPadding);
+    }
+    .buttonGridButton > .buttonFooter {
+        font-size: 4vmin;
+    }
+    .buttonHoverCard {
+        font-size: 3vmin;
+    }
     .buttonGridButton:nth-child(1) {
         grid-area: 1 / 1 / 3 / 3;
-        background-color: #2900e8;
     }
     .buttonGridButton:nth-child(2) {
         grid-area: 3 / 1 / 4 / 2;
-        background-color: #FFF480;
     }
     .buttonGridButton:nth-child(3) {
         grid-area: 3 / 2 / 4 / 3;
-        background-color: #FFFFFF;
     }
     .buttonGridButton:nth-child(4) {
         grid-area: 4 / 1 / 5 / 3;
-        background-color: #1B1B1F;
     }
 }
 
@@ -214,6 +229,7 @@ p {
     }
     .workCard {
         width: 100%;
+        white-space: wrap;
     }
 }
 
@@ -221,7 +237,7 @@ p {
 
 /* Code */
 
-.angusFunction {font-size: 24px;}
+.angusFunction {font-size: 4vmin;}
 .codeLine {margin: 0;}
 .codeTab {margin-left: 40px;}
 .codeTab-2 {margin-left: 80px;}
@@ -237,7 +253,6 @@ p {
 
 
 /* Contact */
-
 
 #contact {
     display: flex;
@@ -257,6 +272,12 @@ p {
     width: 100%;
     height: 100%;
 }
+.formTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .contactForm > .contactInput {
     border-radius: var(--borderRadius);
     background-color: #1B1B1F;
@@ -266,6 +287,7 @@ p {
     padding: var(--bigPadding);
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    width: 100%;
 }
 .contactForm > .contactInput:not(button):focus {
     outline: none;
@@ -318,10 +340,37 @@ p {
     }
     .contactForm > .contactInput:nth-child(5) {
         grid-area: 6 / 1 / 7 / 3; 
-        padding: var(--bigPadding);
+        padding: calc(1.5 * var(--padding));
     }
     .contactForm > .contactInput:nth-child(5) >svg {
-        width: 10%;
-        height: auto;
+        width: 5vmin;
+        height: 5vmin;
+    }
+}
+/* On breakpoint */
+@media (max-width: 450px) {
+    .contactForm {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .contactForm > .contactInput:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 3; 
+    }
+    .contactForm > .contactInput:nth-child(2) {
+        grid-area: 2 / 1 / 2 / 3; 
+    }
+    .contactForm > .contactInput:nth-child(3) {
+        grid-area: 3 / 1 / 4 / 3; 
+    }
+    .contactForm > .contactInput:nth-child(4) {
+        grid-area: 4 / 1 / 7 / 3; 
+    }
+    .contactForm > .contactInput:nth-child(5) {
+        grid-area: 7 / 1 / 8 / 3; 
+        padding: calc(1.5 * var(--padding));
+    }
+    .contactForm > .contactInput:nth-child(5) >svg {
+        width: 5vmin;
+        height: 5vmin;
     }
 }
