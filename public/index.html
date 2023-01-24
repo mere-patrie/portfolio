@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="http://localhost/portfolio/public/main.css">
     <script src="http://localhost/portfolio/public/js/main.js" defer></script>
+
+    <!-- <link rel="stylesheet" href="https://portfolio.hellkeeper.fr/main.css">
+    <script src="https://portfolio.hellkeeper.fr/js/main.js" defer></script> -->
     <title>Angus's portfolio</title>
 </head>
 <body>
+
+    <div id="pageTabs">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <div id="pageContainer">
         <!-- Landing page screen -->
@@ -33,12 +44,12 @@
                     </div>
                     <div class="buttonHoverCard">Learn more about me</div>
                 </div>
-                <div class="buttonGridButton" data-scroll="services">
+                <div class="buttonGridButton" data-scroll="experience">
                     <div class="buttonFooter">
-                        <p>My services</p>
+                        <p>My experience</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="buttonFooterIcon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/></svg>
                     </div>
-                    <div class="buttonHoverCard">See what i can do for you</div>
+                    <div class="buttonHoverCard">My work history</div>
                 </div>
                 <div class="buttonGridButton" data-scroll="contact">
                     <div class="buttonFooter">
@@ -52,11 +63,11 @@
     
         <div class="containerFluid h-100" id="work">
             <div class="workCard">
-                <h1>Ui shop</h1>
-                <div class="workCardContent">
-                    <div class="workImgContainer"></div>
-                    <p>I built an Ui shop with plenty component</p>
-                </div>
+                <h1>Projet</h1>
+                <!-- <div class="workCardContent"> -->
+                    <!-- <div class="workImgContainer"></div> -->
+                    <!-- <p>I built an Ui shop with plenty component</p> -->
+                <!-- </div> -->
             </div>
             <div class="workCard">
                 <h1>Projet</h1>
@@ -94,16 +105,42 @@
             </div>
 
             <div class="aboutCardContainer">
-                <img src="http://localhost/portfolio/public/sources/pdp.png" alt="My photo" class="pdp">
+                <!-- <img src="http://localhost/portfolio/public/sources/pdp.png" alt="My photo" class="pdp"> -->
+                <img src="https://portfolio.hellkeeper.fr/sources/pdp.png" alt="My photo" class="pdp">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nisi illo assumenda maiores ad nesciunt eveniet laudantium vero ratione delectus ea atque ipsa, dicta dolorem velit blanditiis, quam molestiae. Earum!</p>
             </div>
 
             <div class="aboutCardContainer">
-                <a href="http://localhost/portfolio/public/sources/PAILLAUGUE_Angus_CV.pdf" target="_blank" class="button">Télécharger mon CV</a>
+                <!-- <a href="http://localhost/portfolio/public/sources/PAILLAUGUE_Angus_CV.pdf" target="_blank" class="button">Télécharger mon CV</a> -->
+                <a href="https://portfolio.hellkeeper.fr/sources/PAILLAUGUE_Angus_CV.pdf" target="_blank" class="button">Télécharger mon CV</a>
             </div>
         </div>
-        <div class="containerFluid h-100" id="services"></div>
+
+
+        <div class="containerFluid h-100" id="experience">
+            <div class="timeline">
+                <div class="experience">
+                  <div class="content">
+                    <h2>2016</h2>
+                    <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                  </div>
+                </div>
+                <div class="experience">
+                  <div class="content">
+                    <h2>2012</h2>
+                    <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                  </div>
+                </div>
+                <div class="experience">
+                  <div class="content">
+                    <h2>2007</h2>
+                    <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+                  </div>
+                </div>
+              </div>
+        </div>
     
+
         <div class="containerFluid h-100" id="contact">
             <div class="aboutCard formTitle"><h1 style="margin: 0;">Let's get in touch</h1></div>
             <div class="contactForm">

@@ -33,6 +33,7 @@ body {
     min-height: 100vh !important;
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
+    padding-right: 15px;
 }
 
 #pageContainer {
@@ -40,12 +41,29 @@ body {
     width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
+    padding-right: 15px;
     /* scroll-snap-type: y mandatory; */
 }
 
 p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bodyBgColor); 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+::-webkit-scrollbar:hover {
+    width: 10px;
 }
 
 .button {
@@ -79,7 +97,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .containerFluid {
     width: 100% !important;
-    padding: var(--padding);
+    padding:  calc(2 * var(--padding)) var(--padding);
     /* scroll-snap-align: start; */
 }
 .containerFluid.h-100 {
@@ -89,6 +107,32 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#pageTabs {
+    display: flex;
+    position: fixed;
+    opacity: 0;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    flex-direction: column;
+    gap: var(--padding);
+    z-index: 200;
+    transition: all .4s ease;
+}
+#pageTabs > span {
+    width: 10px;
+    height: 10px;
+    background-color: #1B1B1F;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#pageTabs > span.active {
+    width: 10px;
+    height: 10px;
+    background-color: var(--textWhite);
+    border-radius: 50%;
 }
 
 
@@ -102,7 +146,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .landingPageContainer > div:nth-child(1) {
     padding: 0;
-    height: calc(40vh - (var(--padding) * 1.5));
+    height: calc(40vh - (var(--padding) * 3));
     gap: var(--padding);
     position: relative;
 }
@@ -162,6 +206,7 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     gap: var(--padding);
     justify-content: space-between;
+    align-items: center;
     font-size: 24px;
     transition: 0.15s ease;
 }
@@ -197,7 +242,8 @@ p, h1, h2, h3, h4, h5, h6 {
         grid-template-rows: repeat(4, 1fr);
     }
     .buttonGridButton {
-        padding: calc(2*var(--bigPadding)) var(--bigPadding);
+        justify-content: center;
+        padding: calc(2.5*var(--padding)) var(--bigPadding);
     }
     .buttonGridButton > .buttonFooter {
         font-size: 4vmin;
@@ -254,6 +300,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .workCard:nth-child(3) {background-color: #011D32; color: var(--textWhite);}
 .workCard:nth-child(4) {background-color: #4EC9B0; color: var(--textBlack);}
 .workCardContent > .workImgContainer:nth-child(1) {
+    /* background-image: url("https://portfolio.hellkeeper.fr/sources/ui.jpg"); */
     background-image: url("http://localhost/portfolio/public/sources/ui.jpg");
 }
 
@@ -339,6 +386,68 @@ p, h1, h2, h3, h4, h5, h6 {
 .textGreen{color: #b5cea8;}
 .textDarkGreen{color: #4ec9b0;}
 
+
+
+/* My experience */
+
+.timeline {
+    position: relative;
+    margin-left:  15px;
+}
+.timeline::after {
+    content: " ";
+    position: absolute;
+    width: 6px;
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    margin-left: -3px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 66%,  var(--bodyBgColor) 95%);
+}
+.experience {
+    padding: var(--padding) var(--padding) var(--padding) 40px;
+    position: relative;
+    background-color: inherit;
+    width: auto;
+}
+.experience::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid var(--bgYellow);
+    top: 7px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.experience::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: calc(var(--padding) + 5px);
+    width: 0;
+    z-index: 1;
+    left: 31px;
+    border: medium solid #0f0f0f;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #0f0f0f transparent transparent;
+}
+.experience::after {
+    left: -16px;
+}
+.content {
+    border: none;
+    padding: 20px 30px;
+    background-color: #0f0f0f;
+    position: relative;
+    border-radius: 5px calc(var(--borderRadius) / 1.5) calc(var(--borderRadius) / 1.5) calc(var(--borderRadius) / 1.5);
+}
+  
+@media screen and (max-width: 600px) {
+}
 
 
 /* Contact */

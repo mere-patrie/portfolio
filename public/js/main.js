@@ -1,3 +1,5 @@
+const pages = ["work", "about", "experience", "contact"];
+
 function myAge(){
     const now = new Date();
     const birthDate = new Date(2005, 9, 14);
@@ -24,40 +26,38 @@ function main() {
 $("document").ready(function() {
     main();
     landingPageButtonsScroll();
-    scroll()
+    scroll();
+    $(`#pageTabs>span`).click((e) => {
+        $(`#${pages[$(e.target).index()]}`)[0].scrollIntoView({ behavior: 'smooth' });
+    })
 });
 
 function scroll() {
     $("#pageContainer").scroll(function() {
-        // Logo opacity
         var opacity = ($("#landingPageLogo").parent().offset().top+$("#landingPageLogo").parent().height()/2)/($("#landingPageLogo").parent().height()/2);
         opacity = opacity >= 1 ? 1 : opacity;
         opacity = opacity <= 0 ? 0 : opacity;
         $("#landingPageLogo").css("opacity", opacity);
-        
-        // Section url params
         var elements = [{name:"", position:0}];
         var goal = $("#pageContainer").scrollTop();
-        
-        // Appending every section name and position to array
         $("[data-scroll]").each(index => {
             var name = $("[data-scroll]")[index].getAttribute("data-scroll");
             var position = $("#"+name).height()*(index+1);
             elements.push({name:name, position:position})
         });
-        
-        // Getting closest section
         var closest = Object.values(elements).reduce(function(prev, curr) {
             return (Math.abs(curr.position - goal) < Math.abs(prev.position - goal) ? curr : prev);
         });
-        
-        // Setting the current section to localStorage
-        if(localStorage.getItem("section") != closest.name){
-            if(closest.name == ""){
-                localStorage.removeItem("section");
-            }else{
-                localStorage.setItem("section", closest.name);
-            }
+        if(localStorage.getItem("section") != closest.name){if(closest.name == ""){localStorage.removeItem("section");}else{localStorage.setItem("section", closest.name);}}
+
+        // Page tabs
+        const index = pages.indexOf(closest.name);
+        if(index == -1){
+            $("#pageTabs").css("opacity", "0");
+        }else {
+            $(`#pageTabs>span`).removeClass("active");
+            $($(`#pageTabs>span`)[index]).addClass("active");
+            $("#pageTabs").css("opacity", "1");
         }
     });
 }
