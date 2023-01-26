@@ -51,19 +51,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar {
-    width: 3px;
-}
-::-webkit-scrollbar-track {
-    background: var(--bodyBgColor); 
-}
-::-webkit-scrollbar-thumb {
-    background: #888; 
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}
-::-webkit-scrollbar:hover {
-    width: 10px;
+    display: noneI;
 }
 
 .button {
@@ -300,8 +288,8 @@ p, h1, h2, h3, h4, h5, h6 {
 .workCard:nth-child(3) {background-color: #011D32; color: var(--textWhite);}
 .workCard:nth-child(4) {background-color: #4EC9B0; color: var(--textBlack);}
 .workCardContent > .workImgContainer:nth-child(1) {
-    /* background-image: url("https://portfolio.hellkeeper.fr/sources/ui.jpg"); */
-    background-image: url("http://localhost/portfolio/public/sources/ui.jpg");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/portfolio-d4e35.appspot.com/o/ui.jpg?alt=media&token=e75a49ad-9796-40b9-a395-8cbd7521bce6");
+    /* background-image: url("http://localhost/portfolio/public/sources/ui.jpg"); */
 }
 
 
