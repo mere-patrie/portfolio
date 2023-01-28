@@ -36,14 +36,42 @@ body {
     padding-right: 15px;
 }
 
+/* Cursor */
+.cursor {
+    display: none;
+    width: 20px;
+    height: 20px;
+    z-index: 300;
+    border-radius: 100%;
+    background-color: black;
+    opacity: .5;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width .3s, height .3s, opacity .3s;
+}
+.cursorHover {
+    width: 30px;
+    height: 30px;
+    opacity: .7;
+}
+.cursorClick {
+    width: 50px;
+    height: 50px;
+    opacity: .7;
+}
+
+
 #pageContainer {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
     padding-right: 15px;
+    cursor: none;
     /* scroll-snap-type: y mandatory; */
 }
+
 
 p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -53,6 +81,7 @@ p > a {
     color: inherit;
     position: relative;
     text-decoration: none;
+    cursor: none;
 }
 p > a::before {
     content: '';
@@ -91,7 +120,6 @@ p > a:hover::after  {
 }
 
 .button {
-    cursor: pointer;
     border-radius: var(--borderRadius);
     padding: var(--bigPadding);
     background-color: var(--bgYellow);
@@ -104,6 +132,7 @@ p > a:hover::after  {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: none;
 }
 
 .button:hover {
@@ -150,7 +179,6 @@ p > a:hover::after  {
     height: 10px;
     background-color: #1B1B1F;
     border-radius: 50%;
-    cursor: pointer;
 }
 #pageTabs > span.active {
     width: 10px;
@@ -201,7 +229,6 @@ p > a:hover::after  {
     transition: 0.4s ease;
 }
 .buttonGridButton:hover {
-    cursor: pointer;
     transform: scale(.95);
 }
 .buttonGridButton:hover > .buttonFooter {
@@ -359,7 +386,6 @@ p > a:hover::after  {
     width: fit-content;
 }
 .aboutCardContainer > .pdp {
-    cursor: pointer;
     transition: .4s ease;
     border-radius: 50%;
     width: auto;
@@ -532,7 +558,6 @@ p > a:hover::after  {
     grid-area: 3 / 5 / 4 / 7;
     background-color: #FFF480;
     padding: var(--bigPadding);
-    cursor: pointer;
     transition: all .4s;
     height: 100%;
 }
