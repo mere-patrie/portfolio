@@ -21,7 +21,7 @@ function cursor() {
     });
     $(document).on('mousedown', () => {cursor.addClass('cursorClick');});
     $(document).on('mouseup', () => {cursor.removeClass('cursorClick');});
-    $('.buttonHoverCard, button, a, .pdp').each((index, el) => {
+    $('.buttonHoverCard, button, a, .pdp, #pageTabs > span').each((index, el) => {
         $(el).on("mouseover", (e) => {cursor.addClass('cursorHover');});
         $(el).on("mouseleave", (e) => {cursor.removeClass('cursorHover');});
     });
