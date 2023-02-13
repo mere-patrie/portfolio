@@ -67,7 +67,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-right: 15px;
+    padding-right: 40px;
     cursor: none;
     /* scroll-snap-type: y mandatory; */
 }
@@ -144,6 +144,10 @@ p > a:hover::after  {
     }
 }
 
+input, textarea {
+    cursor: none;
+}
+
 
 
 /* Containers */
@@ -166,7 +170,7 @@ p > a:hover::after  {
     display: flex;
     position: fixed;
     opacity: 0;
-    right: 10px;
+    right: 20px;
     top: 50%;
     transform: translate(0, -50%);
     flex-direction: column;
@@ -175,16 +179,13 @@ p > a:hover::after  {
     transition: all .4s ease;
 }
 #pageTabs > span {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: #1B1B1F;
     border-radius: 50%;
 }
 #pageTabs > span.active {
-    width: 10px;
-    height: 10px;
     background-color: var(--textWhite);
-    border-radius: 50%;
 }
 
 
@@ -494,9 +495,6 @@ p > a:hover::after  {
     background-color: #0f0f0f;
     position: relative;
     border-radius: 5px calc(var(--borderRadius) / 1.5) calc(var(--borderRadius) / 1.5) calc(var(--borderRadius) / 1.5);
-}
-  
-@media screen and (max-width: 600px) {
 }
 
 
